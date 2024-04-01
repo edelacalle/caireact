@@ -1,2 +1,3 @@
-// src/components/index.ts
-export * from './caitreedoc';
+
+export { default as CaiTreeDoc } from "./CaiTreeDoc";
+

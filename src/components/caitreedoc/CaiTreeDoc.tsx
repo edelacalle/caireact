@@ -1,53 +1,26 @@
+/*
 import React from "react";
-import { PrimeReactProvider } from 'primereact/api';
+import "./Button.scss";
 
-import "primereact/resources/themes/lara-light-cyan/theme.css";
-//import "./lara-dark-cyan/theme.css";
-
-import { Button } from 'primereact/button';  
-
-//import React, { useState } from "react";
-// import "./CaiTreeDoc.css";
-import { CaiTreeDocProps } from "./CaiTreeDoc.types";
-const CaiTreeDoc2: React.FC<CaiTreeDocProps> = (props) => {
-    return (
-        <>
-        <p>CaiTreeDoc</p>
-            
-        </>
-    )
+export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{
+  label: string;
 }
 
-const CaiTreeDoc = () => {
-    // Declare a new state variable, which we'll call "count"
-    const [count, setCount] = React.useState(0);
-  
-    return (
-      <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-          Click me
-        </button>
-      </div>
-    );
-  }
+const Button = ({label, ...others}: ButtonProps) => {
+  return <button {...others}>{label}</button>;
+};
+
+export default Button;
+
+*/
+import {Button} from 'primereact/button';
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
+
+import React from "react";
+const CaiTreeDoc = ({label, ...others}: any) => {
+ // return <button {...others}>{label}</button>;
+ return <Button {...others}>{label}</Button>;
+};
 
 export default CaiTreeDoc;
-
-
-function MyApp() {
-    return (
-        <PrimeReactProvider>
-            <Button>hola</Button>
-        </PrimeReactProvider>
-    );
-}
-
-function Testeo(props:any){
-    return(
-        <>
-        <Button>hola</Button>
-        <p>pp{JSON.stringify(props)}</p>
-        </>
-    )
-}
